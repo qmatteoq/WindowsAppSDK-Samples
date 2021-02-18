@@ -1,10 +1,7 @@
-﻿// Copyright (c) Microsoft Corporation.
-// Licensed under the MIT license.
-
-#include "pch.h"
-#include "MainWindow.xaml.h"
-#if __has_include("MainWindow.g.cpp")
-#include "MainWindow.g.cpp"
+﻿#include "pch.h"
+#include "TestStep.xaml.h"
+#if __has_include("TestStep.g.cpp")
+#include "TestStep.g.cpp"
 #endif
 
 using namespace winrt;
@@ -15,17 +12,17 @@ using namespace Microsoft::UI::Xaml;
 
 namespace winrt::ReunionCppDesktopSampleApp::implementation
 {
-    MainWindow::MainWindow()
+    TestStep::TestStep()
     {
         InitializeComponent();
     }
 
-    int32_t MainWindow::MyProperty()
+    int32_t TestStep::MyProperty()
     {
         throw hresult_not_implemented();
     }
 
-    void MainWindow::MyProperty(int32_t /* value */)
+    void TestStep::MyProperty(int32_t /* value */)
     {
         throw hresult_not_implemented();
     }

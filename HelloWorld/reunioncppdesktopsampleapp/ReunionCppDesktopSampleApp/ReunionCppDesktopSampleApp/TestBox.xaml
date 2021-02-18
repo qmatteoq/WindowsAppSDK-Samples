@@ -1,0 +1,37 @@
+﻿<Grid
+    x:Class="ReunionCppDesktopSampleApp.TestBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ReunionCppDesktopSampleApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    >
+    <Grid Background="#ffd5ad">
+        <RelativePanel Margin="0, 20, 0, 0">
+            <TextBlock x:Name="TestStatus" FontWeight="Bold" FontSize="24" HorizontalAlignment="Center" RelativePanel.AlignLeftWithPanel="True" Margin="20, 0, 0, 0">Test Status:</TextBlock>
+            <StackPanel x:Name="Step1" RelativePanel.Below="TestStatus" Margin="20, 20, 0 ,0"
+                Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock FontSize="16">1) Request Push Notification Channel from WNS</TextBlock>
+                <ProgressRing IsActive="True" Margin="20, 0, 0, 0"/>
+            </StackPanel>
+            <StackPanel x:Name="Step2" RelativePanel.Below="Step1" Margin="20, 20, 0 ,0"
+                Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock FontSize="16">2) Send payload to App Server</TextBlock>
+                <ProgressRing IsActive="True" Margin="20, 0, 0, 0"/>
+            </StackPanel>
+            <StackPanel x:Name="Step3" RelativePanel.Below="Step2" Margin="20, 20, 0 ,0"
+                Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock FontSize="16">3) Receive payload using BackgroundTask/Callback</TextBlock>
+                <ProgressRing IsActive="True" Margin="20, 0, 0, 0"/>
+            </StackPanel>
+            <StackPanel x:Name="Step4" RelativePanel.Below="Step3" Margin="20, 20, 0 ,0"
+                Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock FontSize="16">4) Close channel</TextBlock>
+                <ProgressRing IsActive="True" Margin="20, 0, 0, 0"/>
+            </StackPanel>
+            <Button x:Name="myButton" RelativePanel.Below="Step4" Width="760" Click="RunTest" Margin="20, 20, 20, 0">Run Test</Button>
+            <TextBlock x:Name="resultText" HorizontalAlignment="Center" RelativePanel.Below="myButton" Margin="20, 0, 0, 0"></TextBlock>
+        </RelativePanel>
+    </Grid>
+</Grid>

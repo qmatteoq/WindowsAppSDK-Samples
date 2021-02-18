@@ -5,6 +5,11 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainWindow.xaml" />
+    <Page Include="HomePage.xaml" />
+    <Page Include="Config.xaml" />
+    <Page Include="AppPayload.xaml" />
+    <Page Include="TestBox.xaml" />
+    <Page Include="TestStep.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="App.idl" />

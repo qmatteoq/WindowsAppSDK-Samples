@@ -1,0 +1,9 @@
+namespace ReunionCppDesktopSampleApp
+{
+    [default_interface]
+    runtimeclass TestStep : Microsoft.UI.Xaml.Controls.Page
+    {
+        TestStep();
+        Int32 MyProperty;
+    }
+}

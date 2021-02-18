@@ -1,0 +1,9 @@
+namespace ReunionCppDesktopSampleApp
+{
+    [default_interface]
+    runtimeclass TestBox : Microsoft.UI.Xaml.Controls.Page
+    {
+        TestBox();
+        Int32 MyProperty;
+    }
+}

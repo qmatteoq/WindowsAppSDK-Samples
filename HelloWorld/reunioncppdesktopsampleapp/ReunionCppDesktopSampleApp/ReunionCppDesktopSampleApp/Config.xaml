@@ -1,0 +1,43 @@
+﻿<Grid 
+    x:Class="ReunionCppDesktopSampleApp.Config"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="using:ReunionCppDesktopSampleApp"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="1*" />
+        <RowDefinition Height="8*" />
+        <RowDefinition Height="1*" />
+    </Grid.RowDefinitions>
+    <Grid Background="#faf5af">
+        <RelativePanel MinHeight="300" Margin="20, 10, 0, 0">
+            <TextBlock x:Name="TestStatus" FontWeight="Bold" FontSize="24" RelativePanel.AlignLeftWithPanel="True">Settings:</TextBlock>
+            <ComboBox Name="WNSTypeBox" Header="WNS Type" PlaceholderText="-" Width="100" RelativePanel.Below="TestStatus" Margin="0, 20, 0, 0">
+                <x:String>Raw</x:String>
+                <x:String>Toast</x:String>
+                <x:String>Tile</x:String>
+                <x:String>Badge</x:String>
+            </ComboBox>
+            <ComboBox Name="AppStatus" Header="App Status" PlaceholderText="-" Width="100" RelativePanel.Below="WNSTypeBox" Margin="0, 20, 0, 0">
+                <x:String>Open</x:String>
+                <x:String>Closed</x:String>
+            </ComboBox>
+            <ComboBox Name="DataType" Header="Data Type" PlaceholderText="-" Width="100" RelativePanel.Below="AppStatus" Margin="0, 20, 0, 0">
+                <x:String>JSON</x:String>
+                <x:String>Bytes</x:String>
+            </ComboBox>
+            <ComboBox Name="ForegroundBackground" Header="Push Notification Type" PlaceholderText="-" Width="175" RelativePanel.Below="DataType" Margin="0, 20, 0, 0">
+                <x:String>Background Task</x:String>
+                <x:String>Callback</x:String>
+            </ComboBox>
+            <ComboBox Name="Server" Header="App Server URL" PlaceholderText="-" Width="175" RelativePanel.Below="ForegroundBackground" Margin="0, 20, 0, 0">
+                <x:String>Default Server</x:String>
+                <x:String>My Server</x:String>
+            </ComboBox>
+            <AppBarButton Icon="Add" Height="35" Width="35" RelativePanel.RightOf="Server" RelativePanel.AlignBottomWith="Server" Margin=" 5, 0, 0, 0" />
+        </RelativePanel>
+    </Grid>
+</Grid>

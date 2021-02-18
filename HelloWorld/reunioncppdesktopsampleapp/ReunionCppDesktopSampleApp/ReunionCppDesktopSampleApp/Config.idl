@@ -1,0 +1,9 @@
+namespace ReunionCppDesktopSampleApp
+{
+    [default_interface]
+    runtimeclass Config : Microsoft.UI.Xaml.Controls.Page
+    {
+        Config();
+        Int32 MyProperty;
+    }
+}

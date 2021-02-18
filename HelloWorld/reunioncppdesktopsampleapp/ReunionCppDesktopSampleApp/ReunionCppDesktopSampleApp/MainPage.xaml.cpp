@@ -1,10 +1,7 @@
-﻿// Copyright (c) Microsoft Corporation.
-// Licensed under the MIT license.
-
-#include "pch.h"
-#include "MainWindow.xaml.h"
-#if __has_include("MainWindow.g.cpp")
-#include "MainWindow.g.cpp"
+﻿#include "pch.h"
+#include "BlankPage.xaml.h"
+#if __has_include("BlankPage.g.cpp")
+#include "BlankPage.g.cpp"
 #endif
 
 using namespace winrt;
@@ -15,18 +12,23 @@ using namespace Microsoft::UI::Xaml;
 
 namespace winrt::ReunionCppDesktopSampleApp::implementation
 {
-    MainWindow::MainWindow()
+    BlankPage::BlankPage()
     {
         InitializeComponent();
     }
 
-    int32_t MainWindow::MyProperty()
+    int32_t BlankPage::MyProperty()
     {
         throw hresult_not_implemented();
     }
 
-    void MainWindow::MyProperty(int32_t /* value */)
+    void BlankPage::MyProperty(int32_t /* value */)
     {
         throw hresult_not_implemented();
+    }
+
+    void BlankPage::myButton_Click(IInspectable const&, RoutedEventArgs const&)
+    {
+        myButton().Content(box_value(L"Clicked"));
     }
 }

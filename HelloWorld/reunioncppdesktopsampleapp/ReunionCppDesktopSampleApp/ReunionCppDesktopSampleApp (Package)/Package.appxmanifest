@@ -8,12 +8,12 @@
 
   <Identity
     Name="c9b7841d-b16e-4bfe-a4d0-0c37c1b6823e"
-    Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+    Publisher="CN=purifoypaul"
     Version="1.0.0.0" />
 
   <Properties>
     <DisplayName>ReunionCppDesktopSampleApp (Package)</DisplayName>
-    <PublisherDisplayName>eliezerp</PublisherDisplayName>
+    <PublisherDisplayName>purifoypaul</PublisherDisplayName>
     <Logo>Images\StoreLogo.png</Logo>
   </Properties>
 

@@ -6,15 +6,15 @@
 #pragma push_macro("GetCurrentTime")
 #undef GetCurrentTime
 
-#include "MainWindow.g.h"
+#include "HomePage.g.h"
 
 #pragma pop_macro("GetCurrentTime")
 
 namespace winrt::ReunionCppDesktopSampleApp::implementation
 {
-    struct MainWindow : MainWindowT<MainWindow>
+    struct HomePage : HomePageT<HomePage>
     {
-        MainWindow();
+        HomePage();
 
         int32_t MyProperty();
         void MyProperty(int32_t value);
@@ -24,7 +24,7 @@ namespace winrt::ReunionCppDesktopSampleApp::implementation
 
 namespace winrt::ReunionCppDesktopSampleApp::factory_implementation
 {
-    struct MainWindow : MainWindowT<MainWindow, implementation::MainWindow>
+    struct HomePage : HomePageT<HomePage, implementation::HomePage>
     {
     };
 }

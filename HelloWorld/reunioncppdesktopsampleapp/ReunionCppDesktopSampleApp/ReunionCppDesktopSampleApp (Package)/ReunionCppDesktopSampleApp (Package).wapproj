@@ -40,7 +40,7 @@
     <TargetPlatformVersion>10.0.19041.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
-    <AppxPackageSigningEnabled>false</AppxPackageSigningEnabled>
+    <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
     <AppxTargetsLocation Condition="'$(AppxTargetsLocation)'==''">$(MSBuildThisFileDirectory)build\</AppxTargetsLocation>
     <EntryPointProjectUniqueName>..\ReunionCppDesktopSampleApp\ReunionCppDesktopSampleApp.vcxproj</EntryPointProjectUniqueName>
   </PropertyGroup>
@@ -57,6 +57,7 @@
     <Content Include="Images\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Images\StoreLogo.png" />
     <Content Include="Images\Wide310x150Logo.scale-200.png" />
+    <None Include="ReunionCppDesktopSampleApp %28Package%29_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ReunionCppDesktopSampleApp\ReunionCppDesktopSampleApp.vcxproj">
@@ -87,5 +88,30 @@
 		powershell.exe -ExecutionPolicy Unrestricted -file "$(ProjectDir)AddReunionPackageDependency.ps1" -appxManifestPath "$(ProjectDir)$(OutDir)AppxManifest.xml" -solutionDirectory $(SolutionDir) -architecture $(PlatformName) -appxRecipePath "$(ProjectDir)$(OutDir)$(TargetFileName).build.appxrecipe"
 		powershell.exe -ExecutionPolicy Unrestricted -file "$(ProjectDir)ExcludeExtraReunionDllFromPackage.ps1" -appxRecipePath "$(ProjectDir)$(OutDir)$(TargetFileName).build.appxrecipe"
 	</PostBuildEvent>
+    <PackageCertificateThumbprint>6F08A06E6C049F57C420D976F2BE7F0A0D9F4CD6</PackageCertificateThumbprint>
+    <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
+    <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxPackageDir>C:\Users\purifoypaul\Desktop\ProjectReunion\</AppxPackageDir>
+    <GenerateTestArtifacts>True</GenerateTestArtifacts>
+    <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <AppxBundle>Never</AppxBundle>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|arm64'">
+    <AppxBundle>Never</AppxBundle>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <AppxBundle>Never</AppxBundle>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|arm64'">
+    <AppxBundle>Never</AppxBundle>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+    <AppxBundle>Never</AppxBundle>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <AppxBundle>Never</AppxBundle>
   </PropertyGroup>
 </Project>

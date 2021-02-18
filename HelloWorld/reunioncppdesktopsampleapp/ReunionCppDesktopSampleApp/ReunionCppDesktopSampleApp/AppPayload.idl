@@ -1,0 +1,9 @@
+namespace ReunionCppDesktopSampleApp
+{
+    [default_interface]
+    runtimeclass AppPayload : Microsoft.UI.Xaml.Controls.Page
+    {
+        AppPayload();
+        Int32 MyProperty;
+    }
+}
