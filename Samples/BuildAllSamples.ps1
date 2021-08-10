@@ -41,4 +41,5 @@ nuget sources
 $winuicppsln = "$PSScriptRoot\ResourceManagement\cpp-console-unpackaged\console_unpackaged_app.sln"
 Write-Host $winuicppsln ": " $windowsAppSDKVersion
 nuget restore $winuicppsln
-$msbuild $winuicppsln /restore /p:platform=x86 /p:configuration=debug /p:WindowsAppSDKPackageVersion=$windowsAppSDKVersion
+
+& $msbuild $winuicppsln /restore /p:platform=x86 /p:configuration=debug /p:WindowsAppSDKPackageVersion=$windowsAppSDKVersion
