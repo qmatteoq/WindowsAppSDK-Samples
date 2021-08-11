@@ -42,11 +42,11 @@ nuget sources
 $cppConsoleApp = "$PSScriptRoot\ResourceManagement\cpp-console-unpackaged\console_unpackaged_app.sln"
 Write-Host $cppConsoleApp ": " $windowsAppSDKVersion
 nuget restore $cppConsoleApp
-nuget update $winuicppsln -id Microsoft.WindowsAppSDK.WinUI -version $windowsAppSDKVersion
-nuget update $winuicppsln -id Microsoft.WindowsAppSDK.InteractiveExperiences -version $windowsAppSDKVersion
-nuget update $winuicppsln -id Microsoft.WindowsAppSDK.Foundation -version $windowsAppSDKVersion
-nuget update $winuicppsln -id Microsoft.WindowsAppSDK.DWrite -version $windowsAppSDKVersion
-nuget update $winuicppsln -id Microsoft.WindowsAppSDK -version $windowsAppSDKVersion
+nuget update $cppConsoleApp -id Microsoft.WindowsAppSDK.WinUI -version $windowsAppSDKVersion
+nuget update $cppConsoleApp -id Microsoft.WindowsAppSDK.InteractiveExperiences -version $windowsAppSDKVersion
+nuget update $cppConsoleApp -id Microsoft.WindowsAppSDK.Foundation -version $windowsAppSDKVersion
+nuget update $cppConsoleApp -id Microsoft.WindowsAppSDK.DWrite -version $windowsAppSDKVersion
+nuget update $cppConsoleApp -id Microsoft.WindowsAppSDK -version $windowsAppSDKVersion
 
 $solutionArguments = "$cppConsoleApp /restore /p:platform=x86 /p:configuration=debug /p:WindowsAppSDKPackageVersion=$windowsAppSDKVersion"
 Invoke-Expression "$msbuild $solutionArguments"
