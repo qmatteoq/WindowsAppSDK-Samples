@@ -2,15 +2,16 @@
 Param(
     [string]$windowsAppSDKVersion
 )
-# $msbuild = "msbuild.exe"
-# $testroot = "$PSScriptRoot\HelloWorld\cpp-winui\ReunionCppDesktopSampleApp.sln"
-# Write-Host $testroot ": " $windowsAppSDKVersion
+$msbuild = "msbuild.exe"
+$reunionCPPDesktop = "$PSScriptRoot\HelloWorld\cpp-winui\ReunionCppDesktopSampleApp.sln"
+Write-Host $reunionCPPDesktop ": " $windowsAppSDKVersion
 
-# nuget update $testroot -id Microsoft.WindowsAppSDK.Foundation -version $windowsAppSDKVersion
-# nuget update $testroot -id Microsoft.WindowsAppSDK.DWrite -version $windowsAppSDKVersion
-# nuget update $testroot -id Microsoft.WindowsAppSDK -version $windowsAppSDKVersion
+nuget update $reunionCPPDesktop -id Microsoft.WindowsAppSDK.Foundation -version $windowsAppSDKVersion
+nuget update $reunionCPPDesktop -id Microsoft.WindowsAppSDK.DWrite -version $windowsAppSDKVersion
+nuget update $reunionCPPDesktop -id Microsoft.WindowsAppSDK -version $windowsAppSDKVersion
 
-# & $msbuild $testroot /restore /p:platform=x86 /p:configuration=release
+$solutionArguments = "$reunionCPPDesktop /restore /p:platform=x86 /p:configuration=debug /p:WindowsAppSDKPackageVersion=$windowsAppSDKVersion"
+Invoke-Expression "$msbuild $solutionArguments"
 
 
 # $testroot = "$PSScriptRoot\ResourceManagement\cs-winui\winui_desktop_packaged_app.sln"
@@ -38,9 +39,14 @@ Param(
 # # & $msbuild $testroot /restore /p:platform=x86 /p:configuration=debug
 nuget sources
 
-$winuicppsln = "$PSScriptRoot\ResourceManagement\cpp-console-unpackaged\console_unpackaged_app.sln"
-Write-Host $winuicppsln ": " $windowsAppSDKVersion
-nuget restore $winuicppsln
+$cppConsoleApp = "$PSScriptRoot\ResourceManagement\cpp-console-unpackaged\console_unpackaged_app.sln"
+Write-Host $cppConsoleApp ": " $windowsAppSDKVersion
+nuget restore $cppConsoleApp
+nuget update $winuicppsln -id Microsoft.WindowsAppSDK.WinUI -version $windowsAppSDKVersion
+nuget update $winuicppsln -id Microsoft.WindowsAppSDK.InteractiveExperiences -version $windowsAppSDKVersion
+nuget update $winuicppsln -id Microsoft.WindowsAppSDK.Foundation -version $windowsAppSDKVersion
+nuget update $winuicppsln -id Microsoft.WindowsAppSDK.DWrite -version $windowsAppSDKVersion
+nuget update $winuicppsln -id Microsoft.WindowsAppSDK -version $windowsAppSDKVersion
 
-$solutionArguments = "$winuicppsln /restore /p:platform=x86 /p:configuration=debug /p:WindowsAppSDKPackageVersion=$windowsAppSDKVersion"
+$solutionArguments = "$cppConsoleApp /restore /p:platform=x86 /p:configuration=debug /p:WindowsAppSDKPackageVersion=$windowsAppSDKVersion"
 Invoke-Expression "$msbuild $solutionArguments"
