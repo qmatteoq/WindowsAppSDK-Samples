@@ -3,15 +3,15 @@ Param(
     [string]$windowsAppSDKVersion
 )
 $msbuild = "msbuild.exe"
-$reunionCPPDesktop = "$PSScriptRoot\HelloWorld\cpp-winui\ReunionCppDesktopSampleApp.sln"
-Write-Host $reunionCPPDesktop ": " $windowsAppSDKVersion
+# $reunionCPPDesktop = "$PSScriptRoot\HelloWorld\cpp-winui\ReunionCppDesktopSampleApp.sln"
+# Write-Host $reunionCPPDesktop ": " $windowsAppSDKVersion
 
-nuget update $reunionCPPDesktop -id Microsoft.WindowsAppSDK.Foundation -version $windowsAppSDKVersion
-nuget update $reunionCPPDesktop -id Microsoft.WindowsAppSDK.DWrite -version $windowsAppSDKVersion
-nuget update $reunionCPPDesktop -id Microsoft.WindowsAppSDK -version $windowsAppSDKVersion
+# nuget update $reunionCPPDesktop -id Microsoft.WindowsAppSDK.Foundation -version $windowsAppSDKVersion
+# nuget update $reunionCPPDesktop -id Microsoft.WindowsAppSDK.DWrite -version $windowsAppSDKVersion
+# nuget update $reunionCPPDesktop -id Microsoft.WindowsAppSDK -version $windowsAppSDKVersion
 
-$solutionArguments = "$reunionCPPDesktop /restore /p:platform=x86 /p:configuration=debug /p:WindowsAppSDKPackageVersion=$windowsAppSDKVersion"
-Invoke-Expression "$msbuild $solutionArguments"
+# $solutionArguments = "$reunionCPPDesktop /restore /p:platform=x86 /p:configuration=debug /p:WindowsAppSDKPackageVersion=$windowsAppSDKVersion"
+# Invoke-Expression "$msbuild $solutionArguments"
 
 
 # $testroot = "$PSScriptRoot\ResourceManagement\cs-winui\winui_desktop_packaged_app.sln"
