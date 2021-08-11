@@ -2,7 +2,7 @@
 Param(
     [string]$windowsAppSDKVersion
 )
-$msbuild = "msbuild.exe"
+# $msbuild = "msbuild.exe"
 # $testroot = "$PSScriptRoot\HelloWorld\cpp-winui\ReunionCppDesktopSampleApp.sln"
 # Write-Host $testroot ": " $windowsAppSDKVersion
 
@@ -46,5 +46,4 @@ nuget update $winuicppsln -id Microsoft.WindowsAppSDK.InteractiveExperiences -ve
 nuget update $winuicppsln -id Microsoft.WindowsAppSDK.Foundation -version $windowsAppSDKVersion
 nuget update $winuicppsln -id Microsoft.WindowsAppSDK.DWrite -version $windowsAppSDKVersion
 nuget update $winuicppsln -id Microsoft.WindowsAppSDK -version $windowsAppSDKVersion
-exit /b 0
 & $msbuild $winuicppsln /restore /p:platform=x86 /p:configuration=debug /p:WindowsAppSDKPackageVersion=$windowsAppSDKVersion
